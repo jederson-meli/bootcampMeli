@@ -4,11 +4,11 @@ import java.math.BigDecimal;
 
 public class Veiculo {
 
-    private String modelo;
     private String marca;
+    private String modelo;
     private BigDecimal preco;
 
-    public Veiculo(String modelo, String marca, BigDecimal preco) {
+    public Veiculo(String marca, String modelo, BigDecimal preco) {
         this.modelo = modelo;
         this.marca = marca;
         this.preco = preco;
@@ -36,5 +36,14 @@ public class Veiculo {
 
     public void setPreco(BigDecimal preco) {
         this.preco = preco;
+    }
+
+    @Override
+    public String toString() {
+        return "Veiculo{" +
+                "marca='" + marca + '\'' +
+                ", modelo='" + modelo + '\'' +
+                ", preco=" + preco +
+                '}';
     }
 }
