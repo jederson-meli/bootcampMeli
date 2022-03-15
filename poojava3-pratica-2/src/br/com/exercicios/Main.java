@@ -25,5 +25,9 @@ public class Main {
 
         listaVeiculos.sort((a, b) -> a.getPreco().compareTo(b.getPreco()));
         listaVeiculos.forEach(veiculo -> System.out.println(veiculo));
+        System.out.println("----------------------------------------------");
+        listaVeiculos.sort((a, b) -> a.getMarca().compareTo(b.getMarca()));
+
+        listaVeiculos.forEach(veiculo -> System.out.println(veiculo));
     }
 }
