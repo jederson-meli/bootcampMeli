@@ -16,5 +16,15 @@ public class Item {
     String codigo;
     String nome;
     int qtd;
-    BigDecimal price;
+    double price;
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "codigo='" + codigo + '\'' +
+                ", nome='" + nome + '\'' +
+                ", qtd=" + qtd +
+                ", price=" + price +
+                '}';
+    }
 }
