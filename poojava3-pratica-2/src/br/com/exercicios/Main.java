@@ -25,30 +25,30 @@ public class Main {
 
         Garagem garagem = new Garagem("1",listaVeiculos);
 
-        listaVeiculos.sort((a, b) -> a.getPreco().compareTo(b.getPreco()));
-        listaVeiculos.forEach(veiculo -> System.out.println(veiculo));
+        garagem.getListaVeiculos().sort((a, b) -> a.getPreco().compareTo(b.getPreco()));
+        garagem.getListaVeiculos().forEach(veiculo -> System.out.println(veiculo));
 
         System.out.println("----------------------------------------------");
 
-        listaVeiculos.sort((a, b) -> a.getMarca().compareTo(b.getMarca()));
-        listaVeiculos.forEach(veiculo -> System.out.println(veiculo));
+        garagem.getListaVeiculos().sort((a, b) -> a.getMarca().compareTo(b.getMarca()));
+        garagem.getListaVeiculos().forEach(veiculo -> System.out.println(veiculo));
 
         System.out.println("----------------------------------------------");
 
-        listaVeiculos.stream().filter(veiculo -> veiculo.getPreco().compareTo(BigDecimal.valueOf(1000)) == -1).forEach(System.out::println);
+        garagem.getListaVeiculos().stream().filter(veiculo -> veiculo.getPreco().compareTo(BigDecimal.valueOf(1000)) == -1).forEach(System.out::println);
 
         System.out.println("----------------------------------------------");
 
-        listaVeiculos.stream().filter(veiculo -> veiculo.getPreco().compareTo(BigDecimal.valueOf(1000)) >= 0).forEach(System.out::println);
+        garagem.getListaVeiculos().stream().filter(veiculo -> veiculo.getPreco().compareTo(BigDecimal.valueOf(1000)) >= 0).forEach(System.out::println);
 
         System.out.println("----------------------------------------------");
 
         BigDecimal somaPreco = BigDecimal.ZERO;
 
-        for (Veiculo veiculo : listaVeiculos ) {
+        for (Veiculo veiculo : garagem.getListaVeiculos() ) {
             somaPreco = somaPreco.add(veiculo.getPreco());
         }
-        
+
         System.out.println(somaPreco.divide(BigDecimal.valueOf(11), 2, RoundingMode.HALF_UP));
 
     }
