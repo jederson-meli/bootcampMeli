@@ -1,7 +1,5 @@
 package br.com.supermarket.repository;
 
-import java.util.Optional;
-
 public interface Repository<T> {
 
     public void save(T object);

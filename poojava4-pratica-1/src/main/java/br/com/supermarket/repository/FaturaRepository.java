@@ -1,11 +1,9 @@
 package br.com.supermarket.repository;
 
-import br.com.supermarket.model.Cliente;
 import br.com.supermarket.model.Fatura;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public class FaturaRepository implements Repository<Fatura>{
 

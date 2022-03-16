@@ -7,10 +7,6 @@ import br.com.supermarket.repository.ClienteRepository;
 import br.com.supermarket.repository.FaturaRepository;
 import br.com.supermarket.repository.ItemRepository;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
