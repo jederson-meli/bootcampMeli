@@ -1,6 +1,8 @@
 package br.com.exercicios;
 
 import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,9 +27,29 @@ public class Main {
 
         listaVeiculos.sort((a, b) -> a.getPreco().compareTo(b.getPreco()));
         listaVeiculos.forEach(veiculo -> System.out.println(veiculo));
-        System.out.println("----------------------------------------------");
-        listaVeiculos.sort((a, b) -> a.getMarca().compareTo(b.getMarca()));
 
+        System.out.println("----------------------------------------------");
+
+        listaVeiculos.sort((a, b) -> a.getMarca().compareTo(b.getMarca()));
         listaVeiculos.forEach(veiculo -> System.out.println(veiculo));
+
+        System.out.println("----------------------------------------------");
+
+        listaVeiculos.stream().filter(veiculo -> veiculo.getPreco().compareTo(BigDecimal.valueOf(1000)) == -1).forEach(System.out::println);
+
+        System.out.println("----------------------------------------------");
+
+        listaVeiculos.stream().filter(veiculo -> veiculo.getPreco().compareTo(BigDecimal.valueOf(1000)) >= 0).forEach(System.out::println);
+
+        System.out.println("----------------------------------------------");
+
+        BigDecimal somaPreco = BigDecimal.ZERO;
+
+        for (Veiculo veiculo : listaVeiculos ) {
+            somaPreco = somaPreco.add(veiculo.getPreco());
+        }
+        
+        System.out.println(somaPreco.divide(BigDecimal.valueOf(11), 2, RoundingMode.HALF_UP));
+
     }
 }
